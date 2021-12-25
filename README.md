@@ -8,6 +8,7 @@ Unlike cryptanalysis, in which intercepted data contains a message (though that 
 
 ## Dataset Used 
 
+### MLStego Dataset
 The dataset used is named [**Linneaus 5 Dataset**](http://chaladze.com/l5/). 
 
 * 5 classes: berry, bird, dog, flower, other (negative set)
@@ -16,6 +17,18 @@ The dataset used is named [**Linneaus 5 Dataset**](http://chaladze.com/l5/).
 * Images were downloaded from pixabay.com.
 
 **Citation** - Chaladze, G. Kalatozishvili L. 2017. Linnaeus 5 Dataset for Machine Learning.
+
+### Alaska2 Dataset
+
+The dataset used is named [**Alaska 2 Dataset**](https://www.kaggle.com/c/alaska2-image-steganalysis). 
+
+This dataset contains a large number of unaltered images, called the "Cover" image, as well as corresponding examples in which information has been hidden using one of three steganography algorithms (JMiPOD, JUNIWARD, UERD). 
+
+* Each embedding algorithm is used with the same probability.
+* The payload (message length) is adjusted such that the "difficulty" is approximately the same regardless the content of the image. Images with smooth content are used to hide shorter messages while highly textured images will be used to hide more secret bits. The payload is adjusted in the same manner for testing and training sets.
+* The average message length is 0.4 bit per non-zero AC DCT coefficient.
+* The images are all compressed with one of the three following JPEG quality factors: 95, 90 or 75.
+
 
 ## Architecture Used 
  The network architecture used was a basic CNN model, with Max Pooling and ReLU Activation functions. Input images are resized to an optimal size and then fed into the **Convolutional layer**. These images are converted to their pixel values, which can be imagined as a three-dimensional matrix for the purpose of visualization. The **Convolutional layer** has a kernel. This kernel is generally a small matrix of specified kernel size mxnx3 (3 for RGB images). 
